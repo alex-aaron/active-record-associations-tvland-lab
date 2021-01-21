@@ -1,4 +1,4 @@
-require 'pry'
+
 class Actor < ActiveRecord::Base
   has_many :characters
   has_many :shows, through: :characters
@@ -11,6 +11,5 @@ class Actor < ActiveRecord::Base
     characters.collect do |character|
         "#{character.name} - #{character.show.name}"
     end
-    binding.pry
   end
 end
